@@ -19,7 +19,7 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.timer = Timer(timeInterval: 1.2, target: self, selector: #selector(self.launchNextScreen), userInfo: nil, repeats: false)
+        self.timer = Timer(timeInterval: 2.0, target: self, selector: #selector(self.launchNextScreen), userInfo: nil, repeats: false)
         RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.common)
     }
     

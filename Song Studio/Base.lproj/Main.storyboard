@@ -15,13 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="GLQ-ok-Oij">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="vFs-tz-zPa">
+                                <rect key="frame" x="12" y="253" width="390" height="390"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vFs-tz-zPa" secondAttribute="height" multiplier="1:1" id="Wpy-7U-e2c"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vFs-tz-zPa" firstAttribute="leading" secondItem="4pM-Vz-VPq" secondAttribute="leading" constant="12" id="EzA-cT-oLL"/>
+                            <constraint firstItem="4pM-Vz-VPq" firstAttribute="trailing" secondItem="vFs-tz-zPa" secondAttribute="trailing" constant="12" id="IHk-5n-060"/>
+                            <constraint firstItem="vFs-tz-zPa" firstAttribute="centerY" secondItem="GLQ-ok-Oij" secondAttribute="centerY" id="rf1-cW-7vU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4pM-Vz-VPq"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMu-YN-Y1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-567" y="98"/>
+            <point key="canvasLocation" x="-568.1159420289855" y="97.767857142857139"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -259,5 +272,6 @@
     <resources>
         <image name="music" width="24" height="24"/>
         <image name="play" width="24" height="24"/>
+        <image name="splash" width="112.5" height="112.5"/>
     </resources>
 </document>

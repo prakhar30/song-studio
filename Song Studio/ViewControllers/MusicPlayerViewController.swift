@@ -12,11 +12,7 @@ import AVFoundation
 
 class MusicPlayerViewController: UIViewController {
     
-    var selectedSongIndex = 0 {
-        didSet {
-            print(selectedSongIndex)
-        }
-    }
+    var selectedSongIndex = 0
     var songList = [Song]()
     lazy var playerQueue : AVQueuePlayer = {
         return AVQueuePlayer()
@@ -28,26 +24,24 @@ class MusicPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationTitle.title = songList[selectedSongIndex].name
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        coverImage.sd_setImage(with: URL(string: songList[selectedSongIndex].coverImageURL), completed: nil)
-        playCurrentSong(atIndex: selectedSongIndex)
+        updateUI()
+        playInitialSelectedSong()
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func prevButtonAction(_ sender: Any) {
         selectedSongIndex = selectedSongIndex - 1
-        if let url = URL(string: songList[selectedSongIndex].url) {
-            let nextAVPlayerItem = AVPlayerItem.init(url: url)
-            self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
-            self.navigationTitle.title = songList[selectedSongIndex].name
-            self.coverImage.sd_setImage(with: URL(string: songList[selectedSongIndex].coverImageURL), completed: nil)
+        if selectedSongIndex < 0 {
+            selectedSongIndex = songList.count - 1
         }
+        replacePlayingSongWith(songAtIndex: selectedSongIndex)
     }
     
     @IBAction func pauseButtonAction(_ sender: Any) {
@@ -62,19 +56,30 @@ class MusicPlayerViewController: UIViewController {
     
     @IBAction func nextButtonAction(_ sender: Any) {
         selectedSongIndex = selectedSongIndex + 1
-        if let url = URL(string: songList[selectedSongIndex].url) {
-            let nextAVPlayerItem = AVPlayerItem.init(url: url)
-            self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
-            self.navigationTitle.title = songList[selectedSongIndex].name
-            self.coverImage.sd_setImage(with: URL(string: songList[selectedSongIndex].coverImageURL), completed: nil)
+        if selectedSongIndex > songList.count - 1 {
+            selectedSongIndex = 0
         }
+        replacePlayingSongWith(songAtIndex: selectedSongIndex)
     }
     
-    func playCurrentSong(atIndex: Int) {
-        if let url = URL(string: songList[atIndex].url) {
+    func updateUI() {
+        navigationTitle.title = songList[selectedSongIndex].name
+        coverImage.sd_setImage(with: URL(string: songList[selectedSongIndex].coverImageURL), completed: nil)
+    }
+    
+    func playInitialSelectedSong() {
+        if let url = URL(string: songList[selectedSongIndex].url) {
             let playerItem = AVPlayerItem.init(url: url)
             self.playerQueue.insert(playerItem, after: nil)
             self.playerQueue.play()
+        }
+    }
+    
+    func replacePlayingSongWith(songAtIndex: Int) {
+        if let url = URL(string: songList[songAtIndex].url) {
+            let nextAVPlayerItem = AVPlayerItem.init(url: url)
+            self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
+            updateUI()
         }
     }
 }

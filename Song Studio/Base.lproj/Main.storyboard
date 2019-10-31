@@ -147,8 +147,17 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-Di-dLu">
                                 <rect key="frame" x="8" y="308" width="398" height="50"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-ob-vja">
+                                        <rect key="frame" x="6" y="8" width="386" height="35"/>
+                                    </slider>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gg6-ob-vja" secondAttribute="bottom" constant="8" id="Dnr-AA-eOd"/>
+                                    <constraint firstAttribute="trailing" secondItem="gg6-ob-vja" secondAttribute="trailing" constant="8" id="eJK-EK-rRt"/>
+                                    <constraint firstItem="gg6-ob-vja" firstAttribute="leading" secondItem="r5Y-Di-dLu" secondAttribute="leading" constant="8" id="lY0-E8-DD7"/>
+                                    <constraint firstItem="gg6-ob-vja" firstAttribute="top" secondItem="r5Y-Di-dLu" secondAttribute="top" constant="8" id="tQz-15-ySe"/>
                                     <constraint firstAttribute="height" constant="50" id="w4y-qx-ZF3"/>
                                 </constraints>
                             </view>
@@ -221,6 +230,7 @@
                         <outlet property="coverImage" destination="w2c-U6-tar" id="ypy-sp-CJ5"/>
                         <outlet property="navigationTitle" destination="DIx-zF-OTY" id="4x4-GH-Ih5"/>
                         <outlet property="playPauseButton" destination="qeg-uA-5EK" id="40D-Vc-tSR"/>
+                        <outlet property="slider" destination="gg6-ob-vja" id="4l6-0z-ar4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvY-zQ-7SH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -17,13 +17,16 @@ class MusicPlayerViewController: UIViewController {
     lazy var playerQueue : AVQueuePlayer = {
         return AVQueuePlayer()
     }()
+    var timeObserverToken: Any?
 
     @IBOutlet weak var navigationTitle: UINavigationItem!
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var slider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,6 +75,7 @@ class MusicPlayerViewController: UIViewController {
             let playerItem = AVPlayerItem.init(url: url)
             self.playerQueue.insert(playerItem, after: nil)
             self.playerQueue.play()
+            setupSlider()
         }
     }
     
@@ -79,9 +83,60 @@ class MusicPlayerViewController: UIViewController {
         if let url = URL(string: songList[songAtIndex].url) {
             let nextAVPlayerItem = AVPlayerItem.init(url: url)
             self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
+            setupSlider()
             updateUI()
         }
     }
+    
+    func setupSlider() {
+        slider.value = 0.0
+        removePeriodicTimeObserver()
+        if let currentItem = self.playerQueue.currentItem {
+            let duration: CMTime = currentItem.asset.duration
+            let seconds: Float64 = CMTimeGetSeconds(duration)
+            slider.maximumValue = Float(seconds)
+            slider.isContinuous = true
+            slider.addTarget(self, action: #selector(self.playbackSliderValueChanged(_:)), for: .valueChanged)
+            
+            let timeScale = CMTimeScale(NSEC_PER_SEC)
+            let time = CMTime(seconds: 1.0, preferredTimescale: timeScale)
+
+            timeObserverToken = self.playerQueue.addPeriodicTimeObserver(forInterval: time,
+                                                                         queue: .main) {
+                                                                            [weak self] time in
+                                                                            if self?.playerQueue.currentItem?.status == .readyToPlay {
+                                                                                if let cmtime = self?.playerQueue.currentTime() {
+                                                                                    let time: Float64 = CMTimeGetSeconds(cmtime)
+                                                                                    self?.slider.value = Float(time)
+                                                                                }
+                                                                            }
+                                                                            
+            }
+        }
+    }
+    
+    @objc func playbackSliderValueChanged(_ playbackSlider: UISlider) {
+        let seconds: Int64 = Int64(playbackSlider.value)
+        let targetTime: CMTime = CMTimeMake(value: seconds, timescale: 1)
+        
+        self.playerQueue.seek(to: targetTime)
+        
+        if self.playerQueue.rate == 0 {
+            self.playerQueue.play()
+        }
+    }
+    
+    func removePeriodicTimeObserver() {
+        if let timeObserverToken = timeObserverToken {
+            self.playerQueue.removeTimeObserver(timeObserverToken)
+            self.timeObserverToken = nil
+        }
+    }
+    
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        removePeriodicTimeObserver()
+    }
+
 }
 
 extension AVPlayer {

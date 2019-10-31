@@ -16,9 +16,11 @@ class AboutMeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        
         tableView.estimatedRowHeight = 50
         tableView.contentInset = UIEdgeInsets(top: 300, left: 0, bottom: 0, right: 0)
-        tableView.backgroundColor = UIColor.darkGray
+        tableView.backgroundColor = UIColor.clear
         
         imageView.frame = CGRect(x: 0, y: navigationBar.frame.maxY, width: UIScreen.main.bounds.size.width, height: 300)
         imageView.image = UIImage.init(named: "wallpaper.jpg")
@@ -34,12 +36,13 @@ class AboutMeViewController: UIViewController {
 
 extension AboutMeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return aboutMeTitle.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: AboutMeTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as! AboutMeTableViewCell
-        cell.titleLabel.text = "Hello"
+        cell.titleLabel.text = aboutMeTitle[indexPath.row]
+        cell.dataLabel.text = aboutMeData[indexPath.row]
         return cell
     }
 }

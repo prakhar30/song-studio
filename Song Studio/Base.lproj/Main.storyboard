@@ -57,7 +57,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acr-Xu-Fzu">
                                                     <rect key="frame" x="28" y="11" width="320" height="22.5"/>
-                                                    <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -162,27 +162,40 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3ZS-Tz-mQM" customClass="AboutMeTableViewCell" customModule="Song_Studio" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="59.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3ZS-Tz-mQM" id="H9t-XX-V9v">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-hW-eX6">
-                                                    <rect key="frame" x="28" y="19" width="358" height="21.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAc-hW-eX6">
+                                                    <rect key="frame" x="28" y="19" width="358" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="now-zC-Miw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ky-BB-JEi">
+                                                    <rect key="frame" x="28" y="47.5" width="358" height="19.5"/>
+                                                    <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="MAc-hW-eX6" firstAttribute="leading" secondItem="H9t-XX-V9v" secondAttribute="leadingMargin" constant="8" id="90P-9h-Y3h"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MAc-hW-eX6" secondAttribute="bottom" constant="8" id="mos-oU-lOf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2ky-BB-JEi" secondAttribute="bottom" constant="8" id="EN5-md-8jF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2ky-BB-JEi" secondAttribute="trailing" constant="8" id="Gp3-pv-r8r"/>
+                                                <constraint firstItem="2ky-BB-JEi" firstAttribute="top" secondItem="MAc-hW-eX6" secondAttribute="bottom" constant="8" id="mJC-6H-RPK"/>
                                                 <constraint firstItem="MAc-hW-eX6" firstAttribute="top" secondItem="H9t-XX-V9v" secondAttribute="topMargin" constant="8" id="qKe-fS-mf4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MAc-hW-eX6" secondAttribute="trailing" constant="8" id="ucQ-6s-Heq"/>
+                                                <constraint firstItem="2ky-BB-JEi" firstAttribute="leading" secondItem="H9t-XX-V9v" secondAttribute="leadingMargin" constant="8" id="zoN-fM-xjF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dataLabel" destination="2ky-BB-JEi" id="Jeb-7K-TZr"/>
                                             <outlet property="titleLabel" destination="MAc-hW-eX6" id="wQX-0A-xdl"/>
                                         </connections>
                                     </tableViewCell>
@@ -212,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFb-fA-Qf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="775"/>
+            <point key="canvasLocation" x="137.68115942028987" y="774.77678571428567"/>
         </scene>
         <!--Music Player View Controller-->
         <scene sceneID="2uL-Hd-TyR">

@@ -25,6 +25,7 @@
 		956F2ED5236B9308004DCE2C /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2ED4236B9308004DCE2C /* AboutMeViewController.swift */; };
 		956F2ED7236B95E6004DCE2C /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2ED6236B95E6004DCE2C /* AboutMeTableViewCell.swift */; };
 		956F2ED9236B96E7004DCE2C /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 956F2ED8236B96E7004DCE2C /* wallpaper.jpg */; };
+		956F2EDE236B9E63004DCE2C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2EDD236B9E63004DCE2C /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		956F2ED4236B9308004DCE2C /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		956F2ED6236B95E6004DCE2C /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
 		956F2ED8236B96E7004DCE2C /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
+		956F2EDD236B9E63004DCE2C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BB0C26174843F72DF952315A /* Pods-Song Studio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Song Studio.release.xcconfig"; path = "Target Support Files/Pods-Song Studio/Pods-Song Studio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 		95330F20236B53CE00E1501C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				956F2EDC236B9E54004DCE2C /* Constants */,
 				956F2ECF236B829C004DCE2C /* Extensions */,
 				956F2ECE236B8287004DCE2C /* Network */,
 			);
@@ -161,6 +164,14 @@
 				956F2ED2236B87EA004DCE2C /* UIVIewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		956F2EDC236B9E54004DCE2C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				956F2EDD236B9E63004DCE2C /* String.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		E88D72802CA285F4F1645285 /* Pods */ = {
@@ -299,6 +310,7 @@
 				956F2ED5236B9308004DCE2C /* AboutMeViewController.swift in Sources */,
 				9560264C236B618700E28300 /* MusicPlayerViewController.swift in Sources */,
 				9560264E236B63C400E28300 /* LaunchScreenViewController.swift in Sources */,
+				956F2EDE236B9E63004DCE2C /* String.swift in Sources */,
 				956F2ED3236B87EA004DCE2C /* UIVIewController.swift in Sources */,
 				9560264A236B5D8C00E28300 /* Song.swift in Sources */,
 			);

@@ -45,6 +45,13 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let musicPlayerVC = storyboard.instantiateViewController(withIdentifier: "MusicPlayerViewController_ID") as! MusicPlayerViewController
+        musicPlayerVC.selectedSongIndex = indexPath.row
+        musicPlayerVC.songList = self.songList
+        navigationController?.pushViewController(musicPlayerVC, animated: true)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {

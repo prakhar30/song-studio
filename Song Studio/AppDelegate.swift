@@ -13,8 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         return true
     }
+    
+    func openMainScreen() {
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         let controller = storyboard.instantiateViewController(withIdentifier: "HomeViewController_ID")
+         let navController = UINavigationController()
+         navController.navigationBar.isHidden = true
+         navController.viewControllers = [controller]
+         self.window?.rootViewController = navController
+     }
 }
 

@@ -16,9 +16,10 @@
 		955BA58F236B509C0041D264 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BA58E236B509C0041D264 /* HomeViewController.swift */; };
 		955BA592236B509C0041D264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955BA590236B509C0041D264 /* Main.storyboard */; };
 		955BA594236B509D0041D264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955BA593236B509D0041D264 /* Assets.xcassets */; };
-		955BA597236B509D0041D264 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955BA595236B509D0041D264 /* LaunchScreen.storyboard */; };
 		95602647236B5D2D00E28300 /* SongListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95602646236B5D2D00E28300 /* SongListTableViewCell.swift */; };
-		9560264A236B5D8C00E28300 /* SongStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95602649236B5D8C00E28300 /* SongStruct.swift */; };
+		9560264A236B5D8C00E28300 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95602649236B5D8C00E28300 /* Song.swift */; };
+		9560264C236B618700E28300 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560264B236B618700E28300 /* MusicPlayerViewController.swift */; };
+		9560264E236B63C400E28300 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560264D236B63C400E28300 /* LaunchScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,10 +34,11 @@
 		955BA58E236B509C0041D264 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		955BA591236B509C0041D264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		955BA593236B509D0041D264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		955BA596236B509D0041D264 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955BA598236B509D0041D264 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95602646236B5D2D00E28300 /* SongListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListTableViewCell.swift; sourceTree = "<group>"; };
-		95602649236B5D8C00E28300 /* SongStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongStruct.swift; sourceTree = "<group>"; };
+		95602649236B5D8C00E28300 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		9560264B236B618700E28300 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		9560264D236B63C400E28300 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		BB0C26174843F72DF952315A /* Pods-Song Studio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Song Studio.release.xcconfig"; path = "Target Support Files/Pods-Song Studio/Pods-Song Studio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				955BA58E236B509C0041D264 /* HomeViewController.swift */,
+				9560264B236B618700E28300 /* MusicPlayerViewController.swift */,
+				9560264D236B63C400E28300 /* LaunchScreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,7 +111,6 @@
 				955BA58A236B509C0041D264 /* AppDelegate.swift */,
 				955BA590236B509C0041D264 /* Main.storyboard */,
 				955BA593236B509D0041D264 /* Assets.xcassets */,
-				955BA595236B509D0041D264 /* LaunchScreen.storyboard */,
 				955BA598236B509D0041D264 /* Info.plist */,
 			);
 			path = "Song Studio";
@@ -124,7 +127,7 @@
 		95602648236B5D7900E28300 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				95602649236B5D8C00E28300 /* SongStruct.swift */,
+				95602649236B5D8C00E28300 /* Song.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,7 +201,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955BA597236B509D0041D264 /* LaunchScreen.storyboard in Resources */,
 				955BA594236B509D0041D264 /* Assets.xcassets in Resources */,
 				955BA592236B509C0041D264 /* Main.storyboard in Resources */,
 			);
@@ -260,7 +262,9 @@
 				95330F2B236B563A00E1501C /* ReachabilityManager.swift in Sources */,
 				95602647236B5D2D00E28300 /* SongListTableViewCell.swift in Sources */,
 				955BA58B236B509C0041D264 /* AppDelegate.swift in Sources */,
-				9560264A236B5D8C00E28300 /* SongStruct.swift in Sources */,
+				9560264C236B618700E28300 /* MusicPlayerViewController.swift in Sources */,
+				9560264E236B63C400E28300 /* LaunchScreenViewController.swift in Sources */,
+				9560264A236B5D8C00E28300 /* Song.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,14 +277,6 @@
 				955BA591236B509C0041D264 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		955BA595236B509D0041D264 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				955BA596236B509D0041D264 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

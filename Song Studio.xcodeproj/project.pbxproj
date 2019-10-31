@@ -22,6 +22,9 @@
 		9560264E236B63C400E28300 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560264D236B63C400E28300 /* LaunchScreenViewController.swift */; };
 		956F2ED1236B82B3004DCE2C /* AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2ED0236B82B3004DCE2C /* AVPlayer.swift */; };
 		956F2ED3236B87EA004DCE2C /* UIVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2ED2236B87EA004DCE2C /* UIVIewController.swift */; };
+		956F2ED5236B9308004DCE2C /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2ED4236B9308004DCE2C /* AboutMeViewController.swift */; };
+		956F2ED7236B95E6004DCE2C /* AboutMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2ED6236B95E6004DCE2C /* AboutMeTableViewCell.swift */; };
+		956F2ED9236B96E7004DCE2C /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 956F2ED8236B96E7004DCE2C /* wallpaper.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		9560264D236B63C400E28300 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		956F2ED0236B82B3004DCE2C /* AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayer.swift; sourceTree = "<group>"; };
 		956F2ED2236B87EA004DCE2C /* UIVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewController.swift; sourceTree = "<group>"; };
+		956F2ED4236B9308004DCE2C /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		956F2ED6236B95E6004DCE2C /* AboutMeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeTableViewCell.swift; sourceTree = "<group>"; };
+		956F2ED8236B96E7004DCE2C /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
 		BB0C26174843F72DF952315A /* Pods-Song Studio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Song Studio.release.xcconfig"; path = "Target Support Files/Pods-Song Studio/Pods-Song Studio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +78,7 @@
 				955BA58E236B509C0041D264 /* HomeViewController.swift */,
 				9560264B236B618700E28300 /* MusicPlayerViewController.swift */,
 				9560264D236B63C400E28300 /* LaunchScreenViewController.swift */,
+				956F2ED4236B9308004DCE2C /* AboutMeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 				955BA58A236B509C0041D264 /* AppDelegate.swift */,
 				955BA590236B509C0041D264 /* Main.storyboard */,
 				955BA593236B509D0041D264 /* Assets.xcassets */,
+				956F2ED8236B96E7004DCE2C /* wallpaper.jpg */,
 				955BA598236B509D0041D264 /* Info.plist */,
 			);
 			path = "Song Studio";
@@ -122,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				95602646236B5D2D00E28300 /* SongListTableViewCell.swift */,
+				956F2ED6236B95E6004DCE2C /* AboutMeTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -223,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956F2ED9236B96E7004DCE2C /* wallpaper.jpg in Resources */,
 				955BA594236B509D0041D264 /* Assets.xcassets in Resources */,
 				955BA592236B509C0041D264 /* Main.storyboard in Resources */,
 			);
@@ -280,11 +290,13 @@
 				95330F28236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift in Sources */,
 				95330F22236B53DE00E1501C /* APIManager.swift in Sources */,
 				955BA58F236B509C0041D264 /* HomeViewController.swift in Sources */,
+				956F2ED7236B95E6004DCE2C /* AboutMeTableViewCell.swift in Sources */,
 				95330F26236B55E600E1501C /* HTTPStatusCodes.swift in Sources */,
 				95330F2B236B563A00E1501C /* ReachabilityManager.swift in Sources */,
 				95602647236B5D2D00E28300 /* SongListTableViewCell.swift in Sources */,
 				955BA58B236B509C0041D264 /* AppDelegate.swift in Sources */,
 				956F2ED1236B82B3004DCE2C /* AVPlayer.swift in Sources */,
+				956F2ED5236B9308004DCE2C /* AboutMeViewController.swift in Sources */,
 				9560264C236B618700E28300 /* MusicPlayerViewController.swift in Sources */,
 				9560264E236B63C400E28300 /* LaunchScreenViewController.swift in Sources */,
 				956F2ED3236B87EA004DCE2C /* UIVIewController.swift in Sources */,

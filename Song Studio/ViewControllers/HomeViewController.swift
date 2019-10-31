@@ -22,6 +22,12 @@ class HomeViewController: UIViewController {
         self.fetchSongsList()
     }
     
+    @IBAction func aboutMeButtonAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let aboutMeVC = storyboard.instantiateViewController(withIdentifier: "AboutMeViewController_ID") as! AboutMeViewController
+        navigationController?.pushViewController(aboutMeVC, animated: true)
+    }
+    
     func fetchSongsList() {
         if ReachabilityManager.shared.isConnectedToNetwork() {
             APIManager.shared.getSongsList(success: { (result) in

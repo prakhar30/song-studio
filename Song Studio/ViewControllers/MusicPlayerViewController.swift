@@ -47,6 +47,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func playPrevSong() {
+        // Play the previous song. If current song is the first one then play the last one.
         selectedSongIndex = selectedSongIndex - 1
         if selectedSongIndex < 0 {
             selectedSongIndex = songList.count - 1
@@ -69,6 +70,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func playNextSong() {
+        // Play the next song. If current song is the last one then play the first one.
         selectedSongIndex = selectedSongIndex + 1
         if selectedSongIndex > songList.count - 1 {
             selectedSongIndex = 0
@@ -97,6 +99,7 @@ class MusicPlayerViewController: UIViewController {
             setupSliderValues()
             updateUI()
             
+            // Resume playing if the user paused and then clicked the prev/next button.
             if !self.playerQueue.isPlaying {
                 self.playerQueue.play()
                 self.playPauseButton.setTitle("Pause", for: .normal)
@@ -105,6 +108,7 @@ class MusicPlayerViewController: UIViewController {
     }
     
     func setupSliderValues() {
+        // Setup slider and slider labels
         slider.value = 0.0
         currentSliderValue.text = "00:00"
         maxSliderValue.text = "00:00"
@@ -120,6 +124,7 @@ class MusicPlayerViewController: UIViewController {
             let timeScale = CMTimeScale(NSEC_PER_SEC)
             let time = CMTime(seconds: 1.0, preferredTimescale: timeScale)
 
+            // Observe time after every one second.
             timeObserverToken = self.playerQueue.addPeriodicTimeObserver(forInterval: time,
                                                                          queue: .main) {
                                                                             [weak self] time in
@@ -164,6 +169,7 @@ class MusicPlayerViewController: UIViewController {
     }
 
     func addSwipeGesture() {
+        // Add swipe left and right gestures to the cover image to change songs.
         coverImage.isUserInteractionEnabled = true
         let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left]
         for direction in directions {

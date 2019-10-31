@@ -30,7 +30,8 @@ class HomeViewController: UIViewController {
                 print("Failure \(failureString)")
             })
         } else {
-            // SHOW INTERNET NOT CONNECTED POPUP
+            self.displayPopup(title: "No internet connection", message: "Please check your network connection, and try again.") {
+            }
         }
     }
     
@@ -66,6 +67,4 @@ extension HomeViewController: UITableViewDataSource {
         cell.songArtists.text = self.songList[indexPath.row].artists
         return cell
     }
-    
-    
 }

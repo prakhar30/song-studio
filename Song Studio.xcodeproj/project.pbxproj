@@ -20,6 +20,7 @@
 		9560264A236B5D8C00E28300 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95602649236B5D8C00E28300 /* Song.swift */; };
 		9560264C236B618700E28300 /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560264B236B618700E28300 /* MusicPlayerViewController.swift */; };
 		9560264E236B63C400E28300 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560264D236B63C400E28300 /* LaunchScreenViewController.swift */; };
+		956F2ED1236B82B3004DCE2C /* AVPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F2ED0236B82B3004DCE2C /* AVPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		95602649236B5D8C00E28300 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9560264B236B618700E28300 /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
 		9560264D236B63C400E28300 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		956F2ED0236B82B3004DCE2C /* AVPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayer.swift; sourceTree = "<group>"; };
 		BB0C26174843F72DF952315A /* Pods-Song Studio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Song Studio.release.xcconfig"; path = "Target Support Files/Pods-Song Studio/Pods-Song Studio.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,10 +77,8 @@
 		95330F20236B53CE00E1501C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				95330F25236B55E600E1501C /* HTTPStatusCodes.swift */,
-				95330F27236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift */,
-				95330F21236B53DE00E1501C /* APIManager.swift */,
-				95330F2A236B563A00E1501C /* ReachabilityManager.swift */,
+				956F2ECF236B829C004DCE2C /* Extensions */,
+				956F2ECE236B8287004DCE2C /* Network */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -130,6 +130,25 @@
 				95602649236B5D8C00E28300 /* Song.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		956F2ECE236B8287004DCE2C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				95330F25236B55E600E1501C /* HTTPStatusCodes.swift */,
+				95330F27236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift */,
+				95330F21236B53DE00E1501C /* APIManager.swift */,
+				95330F2A236B563A00E1501C /* ReachabilityManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		956F2ECF236B829C004DCE2C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				956F2ED0236B82B3004DCE2C /* AVPlayer.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E88D72802CA285F4F1645285 /* Pods */ = {
@@ -262,6 +281,7 @@
 				95330F2B236B563A00E1501C /* ReachabilityManager.swift in Sources */,
 				95602647236B5D2D00E28300 /* SongListTableViewCell.swift in Sources */,
 				955BA58B236B509C0041D264 /* AppDelegate.swift in Sources */,
+				956F2ED1236B82B3004DCE2C /* AVPlayer.swift in Sources */,
 				9560264C236B618700E28300 /* MusicPlayerViewController.swift in Sources */,
 				9560264E236B63C400E28300 /* LaunchScreenViewController.swift in Sources */,
 				9560264A236B5D8C00E28300 /* Song.swift in Sources */,

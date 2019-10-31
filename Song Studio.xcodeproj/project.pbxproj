@@ -3,11 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2746C6987ECFC663F13A794F /* Pods_Song_Studio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23EE8D6711257B915C24187A /* Pods_Song_Studio.framework */; };
+		95330F22236B53DE00E1501C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95330F21236B53DE00E1501C /* APIManager.swift */; };
+		95330F26236B55E600E1501C /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95330F25236B55E600E1501C /* HTTPStatusCodes.swift */; };
+		95330F28236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95330F27236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift */; };
+		95330F2B236B563A00E1501C /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95330F2A236B563A00E1501C /* ReachabilityManager.swift */; };
 		955BA58B236B509C0041D264 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BA58A236B509C0041D264 /* AppDelegate.swift */; };
 		955BA58F236B509C0041D264 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955BA58E236B509C0041D264 /* ViewController.swift */; };
 		955BA592236B509C0041D264 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955BA590236B509C0041D264 /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 /* Begin PBXFileReference section */
 		23EE8D6711257B915C24187A /* Pods_Song_Studio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Song_Studio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		818745E97943D0D9955B02F6 /* Pods-Song Studio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Song Studio.debug.xcconfig"; path = "Target Support Files/Pods-Song Studio/Pods-Song Studio.debug.xcconfig"; sourceTree = "<group>"; };
+		95330F21236B53DE00E1501C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		95330F25236B55E600E1501C /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		95330F27236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HTTPStatusCodes+Extensions.swift"; sourceTree = "<group>"; };
+		95330F2A236B563A00E1501C /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		955BA587236B509C0041D264 /* Song Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Song Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		955BA58A236B509C0041D264 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955BA58E236B509C0041D264 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +56,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		95330F1F236B53C200E1501C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95330F20236B53CE00E1501C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95330F25236B55E600E1501C /* HTTPStatusCodes.swift */,
+				95330F27236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift */,
+				95330F21236B53DE00E1501C /* APIManager.swift */,
+				95330F2A236B563A00E1501C /* ReachabilityManager.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		955BA57E236B509B0041D264 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +95,8 @@
 		955BA589236B509C0041D264 /* Song Studio */ = {
 			isa = PBXGroup;
 			children = (
+				95330F20236B53CE00E1501C /* Resources */,
+				95330F1F236B53C200E1501C /* ViewControllers */,
 				955BA58A236B509C0041D264 /* AppDelegate.swift */,
 				955BA58E236B509C0041D264 /* ViewController.swift */,
 				955BA590236B509C0041D264 /* Main.storyboard */,
@@ -85,7 +113,6 @@
 				818745E97943D0D9955B02F6 /* Pods-Song Studio.debug.xcconfig */,
 				BB0C26174843F72DF952315A /* Pods-Song Studio.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -204,7 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95330F28236B55EB00E1501C /* HTTPStatusCodes+Extensions.swift in Sources */,
+				95330F22236B53DE00E1501C /* APIManager.swift in Sources */,
 				955BA58F236B509C0041D264 /* ViewController.swift in Sources */,
+				95330F26236B55E600E1501C /* HTTPStatusCodes.swift in Sources */,
+				95330F2B236B563A00E1501C /* ReachabilityManager.swift in Sources */,
 				955BA58B236B509C0041D264 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

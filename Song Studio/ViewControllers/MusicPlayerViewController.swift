@@ -35,6 +35,7 @@ class MusicPlayerViewController: UIViewController {
         super.viewDidAppear(animated)
         updateUI()
         playInitialSelectedSong()
+        addSwipeGesture()
     }
     
     @IBAction func backButtonAction(_ sender: Any) {
@@ -42,6 +43,10 @@ class MusicPlayerViewController: UIViewController {
     }
     
     @IBAction func prevButtonAction(_ sender: Any) {
+        playPrevSong()
+    }
+    
+    func playPrevSong() {
         selectedSongIndex = selectedSongIndex - 1
         if selectedSongIndex < 0 {
             selectedSongIndex = songList.count - 1
@@ -60,6 +65,10 @@ class MusicPlayerViewController: UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
+        playNextSong()
+    }
+    
+    func playNextSong() {
         selectedSongIndex = selectedSongIndex + 1
         if selectedSongIndex > songList.count - 1 {
             selectedSongIndex = 0
@@ -154,4 +163,21 @@ class MusicPlayerViewController: UIViewController {
         removePeriodicTimeObserver()
     }
 
+    func addSwipeGesture() {
+        coverImage.isUserInteractionEnabled = true
+        let directions: [UISwipeGestureRecognizer.Direction] = [.right, .left]
+        for direction in directions {
+            let gesture = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipe(_:)))
+            gesture.direction = direction
+            self.coverImage.addGestureRecognizer(gesture)
+        }
+    }
+
+    @objc func handleSwipe(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == .right {
+            playPrevSong()
+        } else if sender.direction == .left {
+            playNextSong()
+        }
+    }
 }

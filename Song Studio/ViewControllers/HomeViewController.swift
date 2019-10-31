@@ -61,6 +61,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SongListTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "cell")! as! SongListTableViewCell
+        cell.selectionStyle = .none
         cell.songName.text = self.songList[indexPath.row].name
         cell.songArtists.text = self.songList[indexPath.row].artists
         return cell

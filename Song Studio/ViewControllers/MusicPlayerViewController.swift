@@ -87,6 +87,11 @@ class MusicPlayerViewController: UIViewController {
             self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
             setupSliderValues()
             updateUI()
+            
+            if !self.playerQueue.isPlaying {
+                self.playerQueue.play()
+                self.playPauseButton.setTitle("Pause", for: .normal)
+            }
         }
     }
     
@@ -135,7 +140,7 @@ class MusicPlayerViewController: UIViewController {
     func setupTimerLabel(label: UILabel, seconds: Int) {
         let mins = seconds / 60
         let seconds = seconds % 60
-        label.text = String(format: "%01d:%02d", mins, seconds)
+        label.text = String(format: "%02d:%02d", mins, seconds)
     }
     
     func removePeriodicTimeObserver() {

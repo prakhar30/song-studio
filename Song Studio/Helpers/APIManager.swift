@@ -10,9 +10,19 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-class SRLAPIManager {
-    static let shared = SRLAPIManager()
+class APIManager {
+    static let shared = APIManager()
     var sessionManager = SessionManager()
+    
+    func getSongsList(success: @escaping (JSON) -> Void, failure: @escaping (String) -> Void) {
+        get_requestURL(urlString: "http://starlord.hackerearth.com/studio",
+                       headers: nil,
+                       success: { (result) in
+                        success(result)
+        }, failure: { (failureString) in
+            failure(failureString)
+        })
+    }
     
     func get_requestURL(urlString: String,
                         headers: [String: String]?,
@@ -20,7 +30,7 @@ class SRLAPIManager {
                         success: @escaping (JSON) -> Void,
                         failure: @escaping (String) -> Void) {
         
-        self.sessionManager.request(urlString,
+        APIManager.shared.sessionManager.request(urlString,
                                     method: .get,
                                     parameters: params,
                                     encoding: URLEncoding.default,
@@ -51,8 +61,8 @@ class SRLAPIManager {
                 success(resJson)
             }
         } else if responseObject.result.isFailure {
-            let _: NSError = responseObject.result.error! as NSError
-            failure("")
+            let error: NSError = responseObject.result.error! as NSError
+            failure(error.description)
         }
     }
 }

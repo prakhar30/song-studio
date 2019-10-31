@@ -59,11 +59,12 @@
 		95330F1F236B53C200E1501C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				955BA58E236B509C0041D264 /* ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		95330F20236B53CE00E1501C /* Resources */ = {
+		95330F20236B53CE00E1501C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				95330F25236B55E600E1501C /* HTTPStatusCodes.swift */,
@@ -71,7 +72,7 @@
 				95330F21236B53DE00E1501C /* APIManager.swift */,
 				95330F2A236B563A00E1501C /* ReachabilityManager.swift */,
 			);
-			path = Resources;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		955BA57E236B509B0041D264 = {
@@ -95,10 +96,9 @@
 		955BA589236B509C0041D264 /* Song Studio */ = {
 			isa = PBXGroup;
 			children = (
-				95330F20236B53CE00E1501C /* Resources */,
+				95330F20236B53CE00E1501C /* Helpers */,
 				95330F1F236B53C200E1501C /* ViewControllers */,
 				955BA58A236B509C0041D264 /* AppDelegate.swift */,
-				955BA58E236B509C0041D264 /* ViewController.swift */,
 				955BA590236B509C0041D264 /* Main.storyboard */,
 				955BA593236B509D0041D264 /* Assets.xcassets */,
 				955BA595236B509D0041D264 /* LaunchScreen.storyboard */,

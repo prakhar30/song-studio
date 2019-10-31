@@ -146,23 +146,39 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-Di-dLu">
-                                <rect key="frame" x="8" y="308" width="398" height="50"/>
+                                <rect key="frame" x="8" y="308" width="398" height="70"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gg6-ob-vja">
-                                        <rect key="frame" x="6" y="8" width="386" height="35"/>
+                                        <rect key="frame" x="6" y="8" width="386" height="26"/>
                                     </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjZ-Pm-wlv">
+                                        <rect key="frame" x="8" y="41" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hU4-ax-Lf7">
+                                        <rect key="frame" x="344" y="41" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gg6-ob-vja" secondAttribute="bottom" constant="8" id="Dnr-AA-eOd"/>
+                                    <constraint firstAttribute="bottom" secondItem="hU4-ax-Lf7" secondAttribute="bottom" constant="8" id="1RW-wm-rTu"/>
+                                    <constraint firstItem="YjZ-Pm-wlv" firstAttribute="top" secondItem="gg6-ob-vja" secondAttribute="bottom" constant="8" id="8i7-kZ-5Vi"/>
+                                    <constraint firstAttribute="trailing" secondItem="hU4-ax-Lf7" secondAttribute="trailing" constant="8" id="8tn-L0-70K"/>
+                                    <constraint firstItem="YjZ-Pm-wlv" firstAttribute="leading" secondItem="r5Y-Di-dLu" secondAttribute="leading" constant="8" id="daw-X0-P8T"/>
                                     <constraint firstAttribute="trailing" secondItem="gg6-ob-vja" secondAttribute="trailing" constant="8" id="eJK-EK-rRt"/>
                                     <constraint firstItem="gg6-ob-vja" firstAttribute="leading" secondItem="r5Y-Di-dLu" secondAttribute="leading" constant="8" id="lY0-E8-DD7"/>
                                     <constraint firstItem="gg6-ob-vja" firstAttribute="top" secondItem="r5Y-Di-dLu" secondAttribute="top" constant="8" id="tQz-15-ySe"/>
-                                    <constraint firstAttribute="height" constant="50" id="w4y-qx-ZF3"/>
+                                    <constraint firstAttribute="bottom" secondItem="YjZ-Pm-wlv" secondAttribute="bottom" constant="8" id="uil-a2-RNG"/>
+                                    <constraint firstAttribute="height" constant="70" id="w4y-qx-ZF3"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViG-a1-Lq0">
-                                <rect key="frame" x="8" y="366" width="398" height="50"/>
+                                <rect key="frame" x="8" y="386" width="398" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqm-wF-VZV">
                                         <rect key="frame" x="8" y="3" width="44" height="44"/>
@@ -228,6 +244,8 @@
                     </view>
                     <connections>
                         <outlet property="coverImage" destination="w2c-U6-tar" id="ypy-sp-CJ5"/>
+                        <outlet property="currentSliderValue" destination="YjZ-Pm-wlv" id="p9b-Av-4qh"/>
+                        <outlet property="maxSliderValue" destination="hU4-ax-Lf7" id="hZP-fz-Sg7"/>
                         <outlet property="navigationTitle" destination="DIx-zF-OTY" id="4x4-GH-Ih5"/>
                         <outlet property="playPauseButton" destination="qeg-uA-5EK" id="40D-Vc-tSR"/>
                         <outlet property="slider" destination="gg6-ob-vja" id="4l6-0z-ar4"/>

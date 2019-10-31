@@ -23,6 +23,8 @@ class MusicPlayerViewController: UIViewController {
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var currentSliderValue: UILabel!
+    @IBOutlet weak var maxSliderValue: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +77,7 @@ class MusicPlayerViewController: UIViewController {
             let playerItem = AVPlayerItem.init(url: url)
             self.playerQueue.insert(playerItem, after: nil)
             self.playerQueue.play()
-            setupSlider()
+            setupSliderValues()
         }
     }
     
@@ -83,17 +85,20 @@ class MusicPlayerViewController: UIViewController {
         if let url = URL(string: songList[songAtIndex].url) {
             let nextAVPlayerItem = AVPlayerItem.init(url: url)
             self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
-            setupSlider()
+            setupSliderValues()
             updateUI()
         }
     }
     
-    func setupSlider() {
+    func setupSliderValues() {
         slider.value = 0.0
+        currentSliderValue.text = "00:00"
+        maxSliderValue.text = "00:00"
         removePeriodicTimeObserver()
         if let currentItem = self.playerQueue.currentItem {
             let duration: CMTime = currentItem.asset.duration
             let seconds: Float64 = CMTimeGetSeconds(duration)
+            self.setupTimerLabel(label: maxSliderValue, seconds: Int(seconds))
             slider.maximumValue = Float(seconds)
             slider.isContinuous = true
             slider.addTarget(self, action: #selector(self.playbackSliderValueChanged(_:)), for: .valueChanged)
@@ -108,6 +113,7 @@ class MusicPlayerViewController: UIViewController {
                                                                                 if let cmtime = self?.playerQueue.currentTime() {
                                                                                     let time: Float64 = CMTimeGetSeconds(cmtime)
                                                                                     self?.slider.value = Float(time)
+                                                                                    self?.setupTimerLabel(label: self!.currentSliderValue, seconds: Int(time))
                                                                                 }
                                                                             }
                                                                             
@@ -124,6 +130,12 @@ class MusicPlayerViewController: UIViewController {
         if self.playerQueue.rate == 0 {
             self.playerQueue.play()
         }
+    }
+    
+    func setupTimerLabel(label: UILabel, seconds: Int) {
+        let mins = seconds / 60
+        let seconds = seconds % 60
+        label.text = String(format: "%01d:%02d", mins, seconds)
     }
     
     func removePeriodicTimeObserver() {

@@ -41,6 +41,13 @@ class MusicPlayerViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func prevButtonAction(_ sender: Any) {
+        selectedSongIndex = selectedSongIndex - 1
+        if let url = URL(string: songList[selectedSongIndex].url) {
+            let nextAVPlayerItem = AVPlayerItem.init(url: url)
+            self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
+            self.navigationTitle.title = songList[selectedSongIndex].name
+            self.coverImage.sd_setImage(with: URL(string: songList[selectedSongIndex].coverImageURL), completed: nil)
+        }
     }
     
     @IBAction func pauseButtonAction(_ sender: Any) {
@@ -54,6 +61,13 @@ class MusicPlayerViewController: UIViewController {
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
+        selectedSongIndex = selectedSongIndex + 1
+        if let url = URL(string: songList[selectedSongIndex].url) {
+            let nextAVPlayerItem = AVPlayerItem.init(url: url)
+            self.playerQueue.replaceCurrentItem(with: nextAVPlayerItem)
+            self.navigationTitle.title = songList[selectedSongIndex].name
+            self.coverImage.sd_setImage(with: URL(string: songList[selectedSongIndex].coverImageURL), completed: nil)
+        }
     }
     
     func playCurrentSong(atIndex: Int) {
